@@ -50,7 +50,7 @@ extension Request {
                 let stripped = string.trimmingCharacters(in: .whitespacesAndNewlines)
 
             #if swift(>=3.2)
-                let split = stripped[..<(stripped.range(of: ";")?.lowerBound ?? stripped.endIndex)]
+                let split = String.init(stripped[..<(stripped.range(of: ";")?.lowerBound ?? stripped.endIndex)])
             #else
                 let split = stripped.substring(to: stripped.range(of: ";")?.lowerBound ?? stripped.endIndex)
             #endif
