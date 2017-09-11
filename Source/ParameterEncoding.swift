@@ -223,7 +223,7 @@ public struct URLEncoding: ParameterEncoding {
                 let endIndex = string.index(index, offsetBy: batchSize, limitedBy: string.endIndex) ?? string.endIndex
                 let range = startIndex..<endIndex
 
-                let substring = string[range]
+                let substring = String.init(string[range])
 
                 escaped += substring.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet) ?? String(substring)
 
